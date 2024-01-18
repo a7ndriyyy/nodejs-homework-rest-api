@@ -82,6 +82,9 @@ const logoutUser = async (req, res) => {
 // ================================ UpdateAvatar
 const updateAvatar = async (req, res) => {
   const { _id } = req.user;
+  if (!req.file) {
+    throw HttpError(400, "File is not found.");
+  }
   const { path: tempUpload, originalname } = req.file;
 
   const fileName = `${_id}_${originalname}`;
