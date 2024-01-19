@@ -5,7 +5,7 @@ const { META_PASSWORD } = process.env;
 
 const config = {
   host: "sandbox.smtp.mailtrap.io",
-  port: 587,
+  port: 2525,
   secure: true,
   auth: {
     user: "9f3bf0162cc922",
