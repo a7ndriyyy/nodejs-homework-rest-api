@@ -1,6 +1,5 @@
 const { User } = require("../models/user");
-const { HttpError, ctrlWrapper } = require("../helpers");
-const sendEmail = require("../helpers");
+const { HttpError, ctrlWrapper, sendEmail } = require("../helpers");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -12,6 +11,9 @@ const { nanoid } = require("nanoid");
 
 const avatarsDir = path.join(__dirname, "../", "public", "avatars");
 const { BASE_URL } = process.env;
+
+console.log(sendEmail);
+
 // ============================== Get current User
 const getCurrentUser = async (req, res) => {
   const { email, subscription } = req.user;
