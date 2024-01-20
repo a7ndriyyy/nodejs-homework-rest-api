@@ -1,5 +1,6 @@
 const { User } = require("../models/user");
-const { HttpError, ctrlWrapper, sendEmail } = require("../helpers");
+const { HttpError, ctrlWrapper } = require("../helpers");
+const sendEmail = require("../helpers");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -146,7 +147,7 @@ const resendVerifyEmail = async (req, res) => {
 
   const verifyEmail = {
     to: email,
-    subject: "Verife email",
+    subject: "Verify email",
     html: `<a target="_blank" href="${BASE_URL}/users/verify/${user.verificationToken}">Click verify email</a>`,
   };
 
