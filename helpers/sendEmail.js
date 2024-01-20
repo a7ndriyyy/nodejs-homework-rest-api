@@ -26,5 +26,5 @@ const sendEmail = async (data) => {
     .catch((error) => console.log(error.message));
   return true;
 };
-
+console.log("sendEmail");
 module.exports = sendEmail;
