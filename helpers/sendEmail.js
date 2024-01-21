@@ -1,15 +1,15 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-const { META_PASSWORD } = process.env;
+const { PASSWORD } = process.env;
 
 const config = {
-  host: "sandbox.smtp.mailtrap.io",
-  port: 2525,
+  host: "smtp.meta.ua",
+  port: 465,
   secure: true,
   auth: {
-    user: "9f3bf0162cc922",
-    pass: META_PASSWORD,
+    user: "andrii.test.mail@meta.ua",
+    pass: PASSWORD,
   },
 };
 
@@ -18,7 +18,7 @@ const transport = nodemailer.createTransport(config);
 const sendEmail = async (data) => {
   const email = {
     ...data,
-    from: "9f3bf0162cc922",
+    from: "andrii.test.mail@meta.ua",
   };
   await transport
     .sendMail(email)
